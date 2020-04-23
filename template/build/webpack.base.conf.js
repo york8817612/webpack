@@ -20,6 +20,7 @@ function resolve (dir) {
 }){{/lint}}
 
 module.exports = {
+  mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
   context: path.resolve(__dirname, '../'),
   entry: {
     app: './src/main.js'
