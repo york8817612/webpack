@@ -73,5 +73,5 @@ The development server will run on port 8080 by default. If that port is already
 You can fork this repo to create your own boilerplate, and use it with `vue-cli`:
 
 ``` bash
-vue init username/repo my-project
+vue init york8817612/webpack4#vue4.3.1 my-project
 ```
