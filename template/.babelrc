@@ -1,17 +1,18 @@
 {
   "presets": [
-    ["env", {
+    ["@babel/preset-env", {
       "modules": false,
+      "corejs": "3.6.5",
+      "useBuiltIns": "usage",
       "targets": {
         "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
       }
-    }],
-    "stage-2"
+    }]
   ],
-  "plugins": ["transform-vue-jsx", "transform-runtime"]{{#if_or unit e2e}},
+  "plugins": ["transform-vue-jsx", "@babel/transform-runtime"]{{#if_or unit e2e}},
   "env": {
     "test": {
-      "presets": ["env", "stage-2"]{{#if_eq runner "karma"}},
+      "presets": ["@babel/preset-env", "@babel/preset-stage-2"]{{#if_eq runner "karma"}},
       "plugins": ["transform-vue-jsx", "istanbul"]{{/if_eq}}{{#if_eq runner "jest"}},
       "plugins": ["transform-vue-jsx", "transform-es2015-modules-commonjs", "dynamic-import-node"]{{/if_eq}}
     }
